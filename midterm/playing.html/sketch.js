@@ -18,8 +18,9 @@ function preload() {
   lrcStrings_4 = loadStrings('../assets/Neurotic_And_Lonely.lrc');
   lrcStrings_5 = loadStrings('../assets/Today_I_Met.lrc');
   lrcString_6 = loadStrings('../assets/Assless_Chaps.lrc');
-  lrcString_7 = loadStrings('../assets/Opera_Scene.lrc');
-  lrcString_8 = loadStrings('../assets/If_Anyone_Knows.lrc');
+  lrcString_7 = loadStrings('../assets/If_Anyone_Knows.lrc');
+  lrcString_8 = loadStrings('../assets/Opera_Scene.lrc');
+  
 }
 
 function setup() {
@@ -52,13 +53,11 @@ function setup() {
   audioEl_8.showControls();
   
   // turn the array of strings into one big string, separated by line breaks.
-  lrcStrings = lrcStrings.join('\n');
-  lrcStrings_2 = lrcStrings_2.join('\n');
+  lrcStrings_8 = lrcStrings.join('\n');
   
 
   // lrc.js library converts Strings to JSON
-  var lrcJSON = new Lrc(lrcStrings);
-  var lrcJSON_2 = new Lrc(lrcStrings_2);
+  var lrcJSON = new Lrc(lrcStrings_8);
   
   // iterate through each line of the LRC file to get a Time and Lyric
   for (var i = 0; i < lrcJSON.lines.length; i++) {
@@ -68,7 +67,6 @@ function setup() {
 
     // schedule events to trigger at specific times during audioEl playback
     audioEl.addCue(time, showLyric, lyric);
-    audioEl_2.addCue(time, showLyric, lyric);
 
   }
 
@@ -77,13 +75,7 @@ function setup() {
     lyricDiv.style('font-size', '48px')
     lyricDiv.style('padding', '10px')
     lyricDiv.style('margin', 'auto')
-  
-  lyricDiv_2 = createDiv('');
-    lyricDiv_2.style('font-size', '48px')
-    lyricDiv_2.style('padding', '10px')
-    lyricDiv_2.style('margin', 'auto')
-  
-  
+
 }
 
 
