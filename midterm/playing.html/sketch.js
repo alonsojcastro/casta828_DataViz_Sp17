@@ -6,17 +6,17 @@
 var audioEl, audioEl_2, audioEl_3, audioEl_4, audioEl_5, audioEl_6, audioEl_7, audioEl_8;
 var currentLyric = '';
 var lyricDiv;
-var lrcStrings, lrcStrings_2, lrcStrings_3, lrcStrings_4, lrcStrings_5, lrcStrings_6, lrcStrings_7, lrcStrings_8;
+var lrcString, lrcString_2, lrcString_3, lrcString_4, lrcString_5, lrcString_6, lrcString_7, lrcString_8;
 
 
 function preload() {
 
   // loadStrings returns an array of strings.
-  lrcStrings = loadStrings('../assets/You_Looked_Sexy.lrc');
-  lrcStrings_2 = loadStrings('../assets/Im_sorry.lrc');
-  lrcStrings_3 = loadStrings('../assets/Half_a_Box_of_Condoms.lrc');
-  lrcStrings_4 = loadStrings('../assets/Neurotic_And_Lonely.lrc');
-  lrcStrings_5 = loadStrings('../assets/Today_I_Met.lrc');
+  lrcString = loadStrings('../assets/You_Looked_Sexy.lrc');
+  lrcString_2 = loadStrings('../assets/Im_sorry.lrc');
+  lrcString_3 = loadStrings('../assets/Half_a_Box_of_Condoms.lrc');
+  lrcString_4 = loadStrings('../assets/Neurotic_And_Lonely.lrc');
+  lrcString_5 = loadStrings('../assets/Today_I_Met.lrc');
   lrcString_6 = loadStrings('../assets/Assless_Chaps.lrc');
   lrcString_7 = loadStrings('../assets/If_Anyone_Knows.lrc');
   lrcString_8 = loadStrings('../assets/Opera_Scene.lrc');
@@ -53,11 +53,11 @@ function setup() {
   audioEl_8.showControls();
   
   // turn the array of strings into one big string, separated by line breaks.
-  lrcStrings_8 = lrcStrings.join('\n');
+  lrcString_8 = lrcString_8.join('\n');
   
 
   // lrc.js library converts Strings to JSON
-  var lrcJSON = new Lrc(lrcStrings_8);
+  var lrcJSON = new Lrc(lrcString_8);
   
   // iterate through each line of the LRC file to get a Time and Lyric
   for (var i = 0; i < lrcJSON.lines.length; i++) {
@@ -66,7 +66,7 @@ function setup() {
 
 
     // schedule events to trigger at specific times during audioEl playback
-    audioEl.addCue(time, showLyric, lyric);
+    audioEl_8.addCue(time, showLyric, lyric);
 
   }
 
